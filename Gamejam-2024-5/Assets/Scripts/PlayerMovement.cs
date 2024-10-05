@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
+    [SerializeField] private AudioClip jumpSound;
     private Rigidbody2D body;
     private bool isGrounded;
 
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        SoundManager.instance.PlaySound(jumpSound);
         body.velocity = new Vector2(body.velocity.x, jumpSpeed);
         isGrounded = false;
     }
