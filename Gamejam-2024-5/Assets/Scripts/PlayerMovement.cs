@@ -4,9 +4,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
-    [SerializeField] private AudioClip jumpSound;
     private Rigidbody2D body;
     private bool isGrounded;
+
+    [Header ("SFX")]
+    [SerializeField] private AudioClip jumpSound;
 
     private void Awake()
     {
